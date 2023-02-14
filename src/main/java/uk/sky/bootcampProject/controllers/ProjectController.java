@@ -1,4 +1,4 @@
-package uk.sky.bootcampProject.rest;
+package uk.sky.bootcampProject.controllers;
 
 import org.springframework.web.bind.annotation.*;
 import uk.sky.bootcampProject.entities.Users;
@@ -20,14 +20,14 @@ public class ProjectController {
         this.service = service;
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String greeting() {
-        return "Hello, World!";
+    @GetMapping ("/")
+    public String home() {
+        return "Hello, SEA Project!";
     }
 
     @PostMapping("/create")
-    public Users addMember(@RequestBody @Valid Users users) { // pulls member from the body of the request
-        return this.service.createMember(users);
+    public Users addMember(@RequestBody @Valid Users user) { // pulls member from the body of the request
+        return this.service.createMember(user);
     }
 
     @GetMapping("/getAll")
@@ -42,8 +42,8 @@ public class ProjectController {
     }
 
     @PatchMapping("/update/{id}")
-    public Users updateMember(@PathVariable int id, @PathParam("name") String name, @PathParam("age") Integer age, @PathParam("email") String email) {
-        return this.service.update(id, name, age, email);
+    public Users updateMember(@PathVariable int id, @PathParam("fullName") String fullName,@PathParam("address") String address, @PathParam("telephoneNumber") Integer telephoneNumber, @PathParam("email") String email,@PathParam("userName") String userName,@PathParam("password") String password) {
+        return this.service.update(id, fullName, address, telephoneNumber, email, userName, password);
     }
 
 

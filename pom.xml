@@ -12,7 +12,7 @@
 	<artifactId>bootcampProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bootcampProject</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Spring Boot Backend for TravelSite Project</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -50,6 +50,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.6</version>
 		</dependency>
 	</dependencies>
 

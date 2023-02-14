@@ -1,7 +1,7 @@
 package uk.sky.bootcampProject.service;
 
 import uk.sky.bootcampProject.entities.Users;
-import uk.sky.bootcampProject.persistence.ProjectRepo;
+import uk.sky.bootcampProject.repository.ProjectRepo;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ public class ProjectServiceDB implements ProjectService {
     }
 
     @Override
-    public Users createMember(Users m) {
-        return this.repo.save(m);
+    public Users createMember(Users details) {
+        return this.repo.save(details);
     }
 
     @Override
@@ -29,15 +29,18 @@ public class ProjectServiceDB implements ProjectService {
     }
 
     @Override
-    public Users update(int id, String name, Integer age, String email) {
-        Users old = this.getById(id);
+    public Users update(int id, String fullName, String address, Integer telephoneNumber, String email, String userName, String password) {
+        Users editUserDetails = this.getById(id);
 
-        if (name != null) old.setFullName(name);
-        if (age != null) old.setAge(age);
-        if (email != null) old.setEmail(email);
+        if (fullName != null) editUserDetails.setFullName(fullName);
+        if (address != null) editUserDetails.setAddress(address);
+        if (telephoneNumber != null) editUserDetails.setTelephoneNumber(telephoneNumber);
+//        if (age != null) old.setAge(age);      // may decide to keep copy of a users age???
+        if (email != null) editUserDetails.setEmail(email);
+        if (userName != null) editUserDetails.setUserName(userName);
+        if (password != null) editUserDetails.setPassword(password);
 
-
-        return this.repo.save(old);
+        return this.repo.save(editUserDetails);
     }
 
     @Override

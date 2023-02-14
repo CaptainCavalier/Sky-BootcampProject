@@ -1,4 +1,4 @@
-package uk.sky.bootcampProject.persistence;
+package uk.sky.bootcampProject.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
