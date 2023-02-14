@@ -1,17 +1,17 @@
 package uk.sky.bootcampProject.service;
 
-import uk.sky.bootcampProject.entities.Member;
+import uk.sky.bootcampProject.entities.Users;
 
 import java.util.List;
 
 public interface ProjectService {
-    Member createMember(Member m);
+    Users createMember(Users m);
 
-    List<Member> getAll();
+    List<Users> getAll();
 
-    Member getById(int id);
+    Users getById(int id);
 
-    Member update(int id, String name, Integer age, String email);
+    Users update(int id, String name, Integer age, String email);
 
-    Member remove(int id);
+    Users remove(int id);
 }

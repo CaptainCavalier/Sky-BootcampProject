@@ -1,6 +1,6 @@
 package uk.sky.bootcampProject.service;
 
-import uk.sky.bootcampProject.entities.Member;
+import uk.sky.bootcampProject.entities.Users;
 import uk.sky.bootcampProject.persistence.ProjectRepo;
 
 import java.util.List;
@@ -14,25 +14,25 @@ public class ProjectServiceDB implements ProjectService {
     }
 
     @Override
-    public Member createMember(Member m) {
+    public Users createMember(Users m) {
         return this.repo.save(m);
     }
 
     @Override
-    public Member getById(int id) {
+    public Users getById(int id) {
         return this.repo.findById(id).get();
     }
 
     @Override
-    public List<Member> getAll() {
+    public List<Users> getAll() {
         return this.repo.findAll();
     }
 
     @Override
-    public Member update(int id, String name, Integer age, String email) {
-        Member old = this.getById(id);
+    public Users update(int id, String name, Integer age, String email) {
+        Users old = this.getById(id);
 
-        if (name != null) old.setName(name);
+        if (name != null) old.setFullName(name);
         if (age != null) old.setAge(age);
         if (email != null) old.setEmail(email);
 
@@ -41,8 +41,8 @@ public class ProjectServiceDB implements ProjectService {
     }
 
     @Override
-    public Member remove(int id) {
-        Member existing = this.getById(id);
+    public Users remove(int id) {
+        Users existing = this.getById(id);
         this.repo.deleteById(id);  // actually does the delete
         return existing;
     }
