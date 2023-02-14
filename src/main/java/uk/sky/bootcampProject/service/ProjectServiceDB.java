@@ -1,10 +1,11 @@
 package uk.sky.bootcampProject.service;
 
+import org.springframework.stereotype.Service;
 import uk.sky.bootcampProject.entities.Users;
 import uk.sky.bootcampProject.repository.ProjectRepo;
 
 import java.util.List;
-
+@Service
 public class ProjectServiceDB implements ProjectService {
 
     private ProjectRepo repo;
