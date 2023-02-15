@@ -42,7 +42,7 @@ public class ProjectController {
     }
 
     @PatchMapping("/update/{id}")
-    public Users updateMember(@PathVariable int id, @PathParam("fullName") String fullName,@PathParam("address") String address, @PathParam("telephoneNumber") Integer telephoneNumber, @PathParam("email") String email,@PathParam("userName") String userName,@PathParam("password") String password) {
+    public Users updateMember(@PathVariable int id, @PathParam("fullName") String fullName,@PathParam("address") String address, @PathParam("telephoneNumber") String telephoneNumber, @PathParam("email") String email,@PathParam("userName") String userName,@PathParam("password") String password) {
         return this.service.update(id, fullName, address, telephoneNumber, email, userName, password);
     }
 

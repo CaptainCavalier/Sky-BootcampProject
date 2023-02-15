@@ -2,6 +2,7 @@ package uk.sky.bootcampProject.service;
 
 import org.springframework.stereotype.Service;
 import uk.sky.bootcampProject.entities.Users;
+import uk.sky.bootcampProject.exceptions.UserNotFoundException;
 import uk.sky.bootcampProject.repository.ProjectRepo;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public class ProjectServiceDB implements ProjectService {
 
     @Override
     public Users getById(int id) {
-        return this.repo.findById(id).get();
+        return this.repo.findById(id).orElseThrow(() -> new UserNotFoundException());
     }
 
     @Override
@@ -30,7 +31,7 @@ public class ProjectServiceDB implements ProjectService {
     }
 
     @Override
-    public Users update(int id, String fullName, String address, Integer telephoneNumber, String email, String userName, String password) {
+    public Users update(int id, String fullName, String address, String telephoneNumber, String email, String userName, String password) {
         Users editUserDetails = this.getById(id);
 
         if (fullName != null) editUserDetails.setFullName(fullName);

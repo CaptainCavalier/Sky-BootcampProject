@@ -22,7 +22,7 @@ public class Users {
     @NotNull
     private String address;
     @NotNull
-    private int telephoneNumber;
+    private String telephoneNumber;
 
 //    @Min(0)
 //    @Max(100)
@@ -41,7 +41,7 @@ public class Users {
     // CONSTRUCTORS
 
 
-    public Users(Integer id, String fullName, String address, int telephoneNumber, String email, String userName, String password) {
+    public Users(Integer id, String fullName, String address, String telephoneNumber, String email, String userName, String password) {
         this.id = id;
         this.fullName = fullName;
         this.address = address;
@@ -113,11 +113,11 @@ public class Users {
         this.address = address;
     }
 
-    public int getTelephoneNumber() {
+    public String getTelephoneNumber() {
         return telephoneNumber;
     }
 
-    public void setTelephoneNumber(int telephoneNumber) {
+    public void setTelephoneNumber(String telephoneNumber) {
         this.telephoneNumber = telephoneNumber;
     }
 }
