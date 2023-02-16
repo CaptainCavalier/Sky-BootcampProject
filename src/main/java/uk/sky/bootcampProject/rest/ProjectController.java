@@ -3,7 +3,7 @@ package uk.sky.bootcampProject.rest;
 import org.springframework.web.bind.annotation.*;
 import uk.sky.bootcampProject.entities.Member;
 import uk.sky.bootcampProject.service.ProjectService;
-import uk.sky.bootcampProject.service.ProjectServiceDB;
+// import uk.sky.bootcampProject.service.ProjectServiceDB;
 
 import javax.validation.Valid;
 import javax.websocket.server.PathParam;
