@@ -4,13 +4,16 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Dashboard from './Components/Dashboard';
 import Preferences from './Components/Preferences';
 import Login from './containers/Login';
-
+import Navbar from './Components/Navbar';
 
 function App() {
   return (
-    <div className="Container">
-      <Dashboard />
-      <Login />
+    <div className="App">
+      <Navbar />
+      <div className="Content">
+        <Dashboard />
+        <Login />
+      </div>
     </div>
     )
 };
