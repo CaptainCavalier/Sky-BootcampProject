@@ -1,18 +1,14 @@
-import React from 'react';
-import './App.css';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import Dashboard from './Components/Dashboard';
-import Preferences from './Components/Preferences';
-import Login from './containers/Login';
-import Navbar from './Components/Navbar';
+import Navbar from './Navbar';
+import Home from './Home';
+import './index.css';
+
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Navbar />
-      <div className="Content">
-        <Dashboard />
-        <Login />
+      <div className="content">
+      <Home />
       </div>
     </div>
     )
