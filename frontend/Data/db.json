@@ -11,24 +11,14 @@
       "id": 1
     },
     {
-      "username": "agergqer",
-      "password": "qergqergerg",
-      "id": 2
-    },
-    {
-      "username": "Dave",
-      "password": "12345jfhryd",
-      "id": 3
-    },
-    {
-      "username": "sdwdefwef",
-      "password": "wefwffwrfwrfwr",
-      "id": 4
-    },
-    {
-      "username": "Tribute5",
-      "password": "password1234",
+      "username": "Tribute2",
+      "password": "password12345",
       "id": 5
+    },
+    {
+      "username": "tribute3",
+      "password": "Password.12345",
+      "id": 6
     }
   ]
 }
