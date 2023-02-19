@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import  Register from './Register';
 
 const Login = () => {
     
@@ -61,8 +62,11 @@ const Login = () => {
                   second button is disabled as we dont want the user to be able to click it. */}
                   { !isPending && <button>Submit</button> } 
                   { isPending && <button disabled>Logging in</button> }
+                  <br>
+                  </br>
 
                   {/* Displays a welcome message to the user as they type in their username */}
+                  <button>Dont have an account? Register here.</button>
                   <p> Welcome { username }! </p>
             </form>
         </div>
