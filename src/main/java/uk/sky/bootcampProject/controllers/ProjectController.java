@@ -1,7 +1,7 @@
 package uk.sky.bootcampProject.controllers;
 
 import org.springframework.web.bind.annotation.*;
-import uk.sky.bootcampProject.entities.Users;
+import uk.sky.bootcampProject.entities.User;
 import uk.sky.bootcampProject.service.ProjectService;
 
 import javax.validation.Valid;
@@ -26,29 +26,27 @@ public class ProjectController {
     }
 
     @PostMapping("/create")
-    public Users addMember(@RequestBody @Valid Users user) { // pulls member from the body of the request
+    public User addMember(@RequestBody @Valid User user) { // pulls member from the body of the request
         return this.service.createMember(user);
     }
 
     @GetMapping("/getAll")
-    public List<Users> getAll() {
+    public List<User> getAll() {
         return this.service.getAll();
     }
 
-
     @GetMapping("/get/{id}")
-    public Users getMember(@PathVariable int id) {  //pulls id from the path (url)
+    public User getMember(@PathVariable int id) {  //pulls id from the path (url)
         return this.service.getById(id);
     }
 
     @PatchMapping("/update/{id}")
-    public Users updateMember(@PathVariable int id, @PathParam("fullName") String fullName,@PathParam("address") String address, @PathParam("telephoneNumber") String telephoneNumber, @PathParam("email") String email,@PathParam("userName") String userName,@PathParam("password") String password) {
-        return this.service.update(id, fullName, address, telephoneNumber, email, userName, password);
+    public User updateMember(@PathVariable int id, @PathParam("fullName") String fullName, @PathParam("userName") String userName, @PathParam("password") String password) {
+        return this.service.update(id, fullName, userName, password);
     }
 
-
     @DeleteMapping("/remove/{id}")
-    public Users removeMember(@PathVariable int id) {
+    public User removeMember(@PathVariable int id) {
         return this.service.remove(id);
     }
 

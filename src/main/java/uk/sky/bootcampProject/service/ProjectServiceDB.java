@@ -1,7 +1,7 @@
 package uk.sky.bootcampProject.service;
 
 import org.springframework.stereotype.Service;
-import uk.sky.bootcampProject.entities.Users;
+import uk.sky.bootcampProject.entities.User;
 import uk.sky.bootcampProject.exceptions.UserNotFoundException;
 import uk.sky.bootcampProject.repository.ProjectRepo;
 
@@ -16,29 +16,25 @@ public class ProjectServiceDB implements ProjectService {
     }
 
     @Override
-    public Users createMember(Users details) {
+    public User createMember(User details) {
         return this.repo.save(details);
     }
 
     @Override
-    public Users getById(int id) {
+    public User getById(int id) {
         return this.repo.findById(id).orElseThrow(() -> new UserNotFoundException());
     }
 
     @Override
-    public List<Users> getAll() {
+    public List<User> getAll() {
         return this.repo.findAll();
     }
 
     @Override
-    public Users update(int id, String fullName, String address, String telephoneNumber, String email, String userName, String password) {
-        Users editUserDetails = this.getById(id);
+    public User update(int id, String fullName, String userName, String password) {
+        User editUserDetails = this.getById(id);
 
         if (fullName != null) editUserDetails.setFullName(fullName);
-        if (address != null) editUserDetails.setAddress(address);
-        if (telephoneNumber != null) editUserDetails.setTelephoneNumber(telephoneNumber);
-//        if (age != null) old.setAge(age);      // may decide to keep copy of a users age???
-        if (email != null) editUserDetails.setEmail(email);
         if (userName != null) editUserDetails.setUserName(userName);
         if (password != null) editUserDetails.setPassword(password);
 
@@ -46,8 +42,8 @@ public class ProjectServiceDB implements ProjectService {
     }
 
     @Override
-    public Users remove(int id) {
-        Users existing = this.getById(id);
+    public User remove(int id) {
+        User existing = this.getById(id);
         this.repo.deleteById(id);  // actually does the delete
         return existing;
     }
