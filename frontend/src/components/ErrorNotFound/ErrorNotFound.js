@@ -8,8 +8,10 @@ const NotFound = () => {
     return ( 
         <div className="not-found">
             <h2>Sorry</h2>
-            <p>That page cannot be found</p>
-            <Link to="/">Back to the Dashboard...</Link>
+            <p>That page cannot be found.</p>
+            <div className="re-route">
+            <Link to="/">Click here to get back home!</Link>
+            </div>
         </div>
      );
 }

@@ -4,8 +4,9 @@ import '../Map/Map.css'
 
 export default function Home() {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: //Placeholder for api key
+    googleMapsApiKey: "Api key here",
   });
+
 
   //if maps !isLoaded(hasnt loaded) return Loading... else return the Map function
   if (!isLoaded) return <div>Loading...</div>;
@@ -20,9 +21,9 @@ function Map() {
     <div className="container">
       <h1>Map</h1>
       <br></br>
-    <GoogleMap zoom={10} center={center} mapContainerClassName="map-container">
-      <Marker position={center} />
-    </GoogleMap>
+      <GoogleMap zoom={10} center={center} mapContainerClassName="map-container">
+        <Marker position={center} />
+      </GoogleMap>
     </div>
   );
 }

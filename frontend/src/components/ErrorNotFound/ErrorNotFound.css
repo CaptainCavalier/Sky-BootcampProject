@@ -1,3 +1,7 @@
 .not-found h2 {
     color:rgb(3, 193, 193);
   }
+
+.re-route :hover {
+    color: rgb(3, 193, 193);
+}

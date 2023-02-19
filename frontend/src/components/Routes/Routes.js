@@ -2,7 +2,7 @@ import NotFound from '../ErrorNotFound/ErrorNotFound';
 import Navbar from '../Navbar/Navbar';
 import Dashboard from '../../Pages/Dashboard/Dashboard';
 import Login from '../../Pages/Login/Login';
-import Home from '../Map/Map.js';
+import Home from '../../Pages/Map/Map';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './Routes.css';
 
