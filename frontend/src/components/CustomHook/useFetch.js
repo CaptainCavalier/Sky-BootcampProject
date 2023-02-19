@@ -39,3 +39,7 @@ const useFetch = (url) => {
 }
 
 export default useFetch;
+
+// custom hook is passed into the file, data prop is renamed, json server url is passed in, in place of the url prop
+// remember to import 'useFetch' if using this.
+    // const {data, isLoading, error} = useFetch('http://localhost:8000/');
