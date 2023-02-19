@@ -1,10 +1,12 @@
 package uk.sky.bootcampProject.service;
 
-import uk.sky.bootcampProject.entities.Member;
-import uk.sky.bootcampProject.persistence.ProjectRepo;
+import org.springframework.stereotype.Service;
+import uk.sky.bootcampProject.entities.User;
+import uk.sky.bootcampProject.exceptions.UserNotFoundException;
+import uk.sky.bootcampProject.repository.ProjectRepo;
 
 import java.util.List;
-
+@Service
 public class ProjectServiceDB implements ProjectService {
 
     private ProjectRepo repo;
@@ -14,35 +16,34 @@ public class ProjectServiceDB implements ProjectService {
     }
 
     @Override
-    public Member createMember(Member m) {
-        return this.repo.save(m);
+    public User createMember(User details) {
+        return this.repo.save(details);
     }
 
     @Override
-    public Member getById(int id) {
-        return this.repo.findById(id).get();
+    public User getById(int id) {
+        return this.repo.findById(id).orElseThrow(() -> new UserNotFoundException());
     }
 
     @Override
-    public List<Member> getAll() {
+    public List<User> getAll() {
         return this.repo.findAll();
     }
 
     @Override
-    public Member update(int id, String name, Integer age, String email) {
-        Member old = this.getById(id);
+    public User update(int id, String fullName, String userName, String password) {
+        User editUserDetails = this.getById(id);
 
-        if (name != null) old.setName(name);
-        if (age != null) old.setAge(age);
-        if (email != null) old.setEmail(email);
+        if (fullName != null) editUserDetails.setFullName(fullName);
+        if (userName != null) editUserDetails.setUserName(userName);
+        if (password != null) editUserDetails.setPassword(password);
 
-
-        return this.repo.save(old);
+        return this.repo.save(editUserDetails);
     }
 
     @Override
-    public Member remove(int id) {
-        Member existing = this.getById(id);
+    public User remove(int id) {
+        User existing = this.getById(id);
         this.repo.deleteById(id);  // actually does the delete
         return existing;
     }

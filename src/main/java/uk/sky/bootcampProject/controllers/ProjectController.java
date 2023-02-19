@@ -1,9 +1,8 @@
-package uk.sky.bootcampProject.rest;
+package uk.sky.bootcampProject.controllers;
 
 import org.springframework.web.bind.annotation.*;
-import uk.sky.bootcampProject.entities.Member;
+import uk.sky.bootcampProject.entities.User;
 import uk.sky.bootcampProject.service.ProjectService;
-import uk.sky.bootcampProject.service.ProjectServiceDB;
 
 import javax.validation.Valid;
 import javax.websocket.server.PathParam;
@@ -21,35 +20,33 @@ public class ProjectController {
         this.service = service;
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String greeting() {
-        return "Hello, World!";
+    @GetMapping ("/")
+    public String home() {
+        return "Hello, SEA Project!";
     }
 
     @PostMapping("/create")
-    public Member addMember(@RequestBody @Valid Member member) { // pulls member from the body of the request
-        return this.service.createMember(member);
+    public User addMember(@RequestBody @Valid User user) { // pulls member from the body of the request
+        return this.service.createMember(user);
     }
 
     @GetMapping("/getAll")
-    public List<Member> getAll() {
+    public List<User> getAll() {
         return this.service.getAll();
     }
 
-
     @GetMapping("/get/{id}")
-    public Member getMember(@PathVariable int id) {  //pulls id from the path (url)
+    public User getMember(@PathVariable int id) {  //pulls id from the path (url)
         return this.service.getById(id);
     }
 
     @PatchMapping("/update/{id}")
-    public Member updateMember(@PathVariable int id, @PathParam("name") String name, @PathParam("age") Integer age, @PathParam("email") String email) {
-        return this.service.update(id, name, age, email);
+    public User updateMember(@PathVariable int id, @PathParam("fullName") String fullName, @PathParam("userName") String userName, @PathParam("password") String password) {
+        return this.service.update(id, fullName, userName, password);
     }
 
-
     @DeleteMapping("/remove/{id}")
-    public Member removeMember(@PathVariable int id) {
+    public User removeMember(@PathVariable int id) {
         return this.service.remove(id);
     }
 
