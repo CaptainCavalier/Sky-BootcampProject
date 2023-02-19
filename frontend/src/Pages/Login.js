@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import  Register from './Register';
 
 const Login = () => {
     
@@ -8,6 +7,8 @@ const Login = () => {
     const [password, setPassword] = useState(''); //--further down in the function.
     const [isPending, setIsPending] = useState(false); //set to false as we are only making the request when the form is submitted
     const navigate = useNavigate();
+    
+
 
 
     const handleSubmit = (e) => {
@@ -55,6 +56,7 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   />
+                  <p> Welcome { username }! </p>
                   <br />
 
                   {/* the button will show submit until the button is clicked. 
@@ -67,7 +69,6 @@ const Login = () => {
 
                   {/* Displays a welcome message to the user as they type in their username */}
                   <button>Dont have an account? Register here.</button>
-                  <p> Welcome { username }! </p>
             </form>
         </div>
      );

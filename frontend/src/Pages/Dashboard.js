@@ -1,18 +1,16 @@
-import useFetch from "../components/useFetch";
+// import useFetch from "../useFetch";
 
 
-const Home = () => {
+const Dashboard = () => {
 // custom hook is passed into the file, data prop is renamed, json server url is passed in, in place of the url prop
 // remember to import 'useFetch' if using this.
-    const {data, isLoading, error} = useFetch('http://localhost:8000/logindata');
-
-
+    // const {data, isLoading, error} = useFetch('http://localhost:8000/');
 
     return ( 
         <div className='home'>
-            <h1>Welcome Home</h1>
+            <h1>Dashboard</h1>
         </div>
      );
 }
  
-export default Home;
+export default Dashboard;
