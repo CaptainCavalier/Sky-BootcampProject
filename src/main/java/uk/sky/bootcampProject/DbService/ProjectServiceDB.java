@@ -28,7 +28,7 @@ public class ProjectServiceDB implements ProjectService {
 
     @Override
     public List<User> getAll() {
-        return this.repo.findAll();
+        return (List<User>) this.repo.findAll();
     }
 
     @Override
