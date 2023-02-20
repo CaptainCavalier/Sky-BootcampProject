@@ -8,9 +8,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import uk.sky.bootcampProject.entities.User;
-import uk.sky.bootcampProject.
-import com.qa.cardatabase.data.entity.User;
-import com.qa.cardatabase.data.repository.UserRepository;
+import uk.sky.bootcampProject.repository.UserRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService{

@@ -15,6 +15,8 @@ public class User {
 
 // ATTRIBUTE FIELDS - INSTANCE VARIABLES
 
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-increment
     @Column(nullable = false, updatable = false)
@@ -27,18 +29,23 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
     private String address;
+
+    @Column(nullable = false)
+    private String role;
 
 
     // CONSTRUCTORS
 
 
-    public User(Integer id, String fullName, String userName, String password, String address) {
+    public User(Integer id, String fullName, String userName, String password, String address, String role) {
         this.id = id;
         this.fullName = fullName;
         this.userName = userName;
         this.password = password;
         this.address = address;
+        this.role= role;
     }
 
     //    REQUIRED
@@ -85,5 +92,13 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
