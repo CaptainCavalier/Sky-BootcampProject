@@ -8,9 +8,9 @@ public class AccountCredentials {
 
         return userName;
     }
-    public void setUsername(String userName) {
+    public void setUsername(String username) {
 
-        this.userName = userName;
+        this.userName = username;
     }
 
     public String getPassword() {
