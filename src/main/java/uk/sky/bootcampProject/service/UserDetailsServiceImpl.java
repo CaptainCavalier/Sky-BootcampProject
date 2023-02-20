@@ -8,13 +8,13 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import uk.sky.bootcampProject.entities.User;
-import uk.sky.bootcampProject.repository.UserRepository;
+import uk.sky.bootcampProject.repository.ProjectRepo;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService{
 
     @Autowired
-    UserRepository repository;
+    ProjectRepo repository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

@@ -24,8 +24,7 @@ public class AuthenticationFilter extends GenericFilterBean{
     {
         // get the JWT token from the Authorization header by calling getAuthentication on our service bean
         Authentication authentication = AuthenticationService.getAuthentication((HttpServletRequest)request);
-        SecurityContextHolder.getContext().
-                setAuthentication(authentication);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
         filterChain.doFilter(request, response);
     }
 }
