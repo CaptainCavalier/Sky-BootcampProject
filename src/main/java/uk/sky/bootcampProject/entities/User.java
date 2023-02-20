@@ -1,15 +1,10 @@
 package uk.sky.bootcampProject.entities;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
+@Table(name = "userTable")
 public class User {
 
 
@@ -25,11 +20,10 @@ public class User {
     @Column(nullable = false) // NOT NULL
     private String fullName;
     @Column(nullable = false, unique = true)
-    private String userName;
+    private String username;
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
     private String address;
 
     @Column(nullable = false)
@@ -39,18 +33,18 @@ public class User {
     // CONSTRUCTORS
 
 
-    public User(Integer id, String fullName, String userName, String password, String address, String role) {
+    public User(Integer id, String fullName, String username, String password, String address, String role) {
         this.id = id;
         this.fullName = fullName;
-        this.userName = userName;
+        this.username = username;
         this.password = password;
         this.address = address;
         this.role = role;
     }
 
-    public User(String fullName, String userName, String password, String role) {
+    public User(String fullName, String username, String password, String role) {
         this.fullName = fullName;
-        this.userName = userName;
+        this.username = username;
         this.password = password;
         this.role= role;
     }
@@ -75,12 +69,12 @@ public class User {
         this.fullName = fullName;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

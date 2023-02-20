@@ -41,8 +41,8 @@ public class ProjectController {
     }
 
     @PatchMapping("/update/{id}")
-    public User updateMember(@PathVariable int id, @PathParam("fullName") String fullName, @PathParam("userName") String userName, @PathParam("password") String password, @PathParam("address") String address) {
-        return this.service.update(id, fullName, userName, password, address);
+    public User updateMember(@PathVariable int id, @PathParam("fullName") String fullName, @PathParam("username") String username, @PathParam("password") String password, @PathParam("address") String address) {
+        return this.service.update(id, fullName, username, password, address);
     }
 
     @DeleteMapping("/remove/{id}")
