@@ -1,6 +1,7 @@
-package uk.sky.bootcampProject.service;
+package uk.sky.bootcampProject.DbService;
 
 import org.springframework.stereotype.Service;
+import uk.sky.bootcampProject.DbService.ProjectService;
 import uk.sky.bootcampProject.entities.User;
 import uk.sky.bootcampProject.exceptions.UserNotFoundException;
 import uk.sky.bootcampProject.repository.ProjectRepo;

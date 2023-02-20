@@ -45,12 +45,17 @@ public class User {
         this.userName = userName;
         this.password = password;
         this.address = address;
+        this.role = role;
+    }
+
+    public User(String fullName, String userName, String password, String role) {
+        this.fullName = fullName;
+        this.userName = userName;
+        this.password = password;
         this.role= role;
     }
 
     //    REQUIRED
-
-
     public User() {
     }
 

@@ -1,4 +1,4 @@
-package uk.sky.bootcampProject.service;
+package uk.sky.bootcampProject.DbService;
 
 import uk.sky.bootcampProject.entities.User;
 
