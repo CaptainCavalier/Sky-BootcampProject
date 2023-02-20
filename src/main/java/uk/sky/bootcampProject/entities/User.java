@@ -21,15 +21,18 @@ public class User {
     @NotNull
     private String password;
 
+    private String address;
+
 
     // CONSTRUCTORS
 
 
-    public User(Integer id, String fullName, String userName, String password) {
+    public User(Integer id, String fullName, String userName, String password, String address) {
         this.id = id;
         this.fullName = fullName;
         this.userName = userName;
         this.password = password;
+        this.address = address;
     }
 
     //    REQUIRED
@@ -68,5 +71,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
