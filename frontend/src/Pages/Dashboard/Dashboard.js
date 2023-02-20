@@ -4,7 +4,7 @@ import './Dashboard.css'
 
 export default function Home() {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyAT96Q48V8E20oWbMWY6zHQuwL2ENIdCeo",
+    googleMapsApiKey: "",
   });
 
 
