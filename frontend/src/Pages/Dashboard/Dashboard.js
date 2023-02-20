@@ -1,11 +1,29 @@
-import './Dashboard.css';
+import { useMemo } from "react";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import './Dashboard.css'
 
-const Dashboard = () => {
-    return ( 
-        <div className='Dashboard'>
-            <h1>Dashboard</h1>
-        </div>
-     );
+export default function Home() {
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: "AIzaSyAT96Q48V8E20oWbMWY6zHQuwL2ENIdCeo",
+  });
+
+
+  //if maps !isLoaded(hasnt loaded) return Loading... else return the Map function
+  if (!isLoaded) return <div>Loading...</div>;
+  return <Map />;
 }
- 
-export default Dashboard;
+
+function Map() {
+  //center will load the map at co-ordinates shown
+  const center = useMemo(() => ({ lat: 51, lng: -0.32 }), []);
+
+  return (
+    <div className="container">
+      <h1>Dashboard</h1>
+      <br></br>
+      <GoogleMap zoom={10} center={center} mapContainerClassName="map-container">
+        <Marker position={center} />
+      </GoogleMap>
+    </div>
+  );
+}

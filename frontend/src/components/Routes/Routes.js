@@ -2,7 +2,8 @@ import NotFound from '../ErrorNotFound/ErrorNotFound';
 import Navbar from '../Navbar/Navbar';
 import Dashboard from '../../Pages/Dashboard/Dashboard';
 import Login from '../../Pages/Login/Login';
-import Home from '../../Pages/Map/Map';
+import Contact from '../../Pages/Contact/Contact';
+import About from '../../Pages/About/About';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './Routes.css';
 
@@ -15,9 +16,11 @@ const Pathway = () => {
           <Routes>
             <Route exact path='/' element={<Dashboard />}>
             </Route>
-            <Route exact path='/map' element={<Home />}>
-            </Route>
             <Route exact path='/login' element={<Login />}>
+            </Route>
+            <Route exact path='/contact' element={<Contact />}>
+            </Route>
+            <Route exact path='/about' element={<About />}>
             </Route>
             {/* ''*'' to catch any other route. this is at the bottom so the above routes can function properly.
             if the user enters a wrong path on the website this should show an error page to re-route them back--
