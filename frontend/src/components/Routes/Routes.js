@@ -6,6 +6,7 @@ import Contact from '../../Pages/Contact/Contact';
 import About from '../../Pages/About/About';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './Routes.css';
+import Register from '../../Pages/Register/Register';
 
 const Pathway = () => {
   return (
@@ -17,6 +18,8 @@ const Pathway = () => {
             <Route exact path='/' element={<Dashboard />}>
             </Route>
             <Route exact path='/login' element={<Login />}>
+            </Route>
+            <Route exact path='/register' element={<Register />}>
             </Route>
             <Route exact path='/contact' element={<Contact />}>
             </Route>

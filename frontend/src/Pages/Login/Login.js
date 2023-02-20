@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { Link, Route } from "react-router-dom";
+import Register from "../Register/Register";
 import './Login.css'
 
 
@@ -36,7 +38,8 @@ const Login = () => {
 
     return ( 
         <div className='login'>
-            <h2>Login</h2>
+            <h1>Login</h1>
+            <br />
             {/* below will enact the function crated earlier with the same name */}
             <form onSubmit={handleSubmit}> 
                 <label>Please enter your username: </label>
@@ -70,7 +73,9 @@ const Login = () => {
                   </br>
 
                   {/* Displays a welcome message to the user as they type in their username */}
-                  <button>Dont have an account? Register here.</button>
+                  <div className="registerlink">
+                  <Link to='/register'>Dont have an account? Register here.</Link>
+                  </div>
             </form>
         </div>
      );
