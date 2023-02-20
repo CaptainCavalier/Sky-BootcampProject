@@ -3,6 +3,11 @@ package uk.sky.bootcampProject.entities;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class User {
@@ -12,13 +17,14 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-increment
+    @Column(nullable = false, updatable = false)
     private Integer id;
     @Size(min = 2, max = 50)
     @Column(nullable = false) // NOT NULL
     private String fullName;
-    @NotNull
+    @Column(nullable = false, unique = true)
     private String userName;
-    @NotNull
+    @Column(nullable = false)
     private String password;
 
     private String address;
