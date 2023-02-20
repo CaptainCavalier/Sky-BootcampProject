@@ -1,6 +1,7 @@
-package uk.sky.bootcampProject.service;
+package uk.sky.bootcampProject.DbService;
 
 import org.springframework.stereotype.Service;
+import uk.sky.bootcampProject.DbService.ProjectService;
 import uk.sky.bootcampProject.entities.User;
 import uk.sky.bootcampProject.exceptions.UserNotFoundException;
 import uk.sky.bootcampProject.repository.ProjectRepo;
@@ -27,16 +28,17 @@ public class ProjectServiceDB implements ProjectService {
 
     @Override
     public List<User> getAll() {
-        return this.repo.findAll();
+        return (List<User>) this.repo.findAll();
     }
 
     @Override
-    public User update(int id, String fullName, String userName, String password) {
+    public User update(int id, String fullName, String username, String password, String address) {
         User editUserDetails = this.getById(id);
 
         if (fullName != null) editUserDetails.setFullName(fullName);
-        if (userName != null) editUserDetails.setUserName(userName);
+        if (username != null) editUserDetails.setUsername(username);
         if (password != null) editUserDetails.setPassword(password);
+        if (address != null) editUserDetails.setAddress(address);
 
         return this.repo.save(editUserDetails);
     }

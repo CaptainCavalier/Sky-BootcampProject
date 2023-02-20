@@ -1,9 +1,10 @@
 package uk.sky.bootcampProject.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import uk.sky.bootcampProject.entities.User;
+import org.springframework.data.repository.CrudRepository;
 
 @Repository
-public interface ProjectRepo extends JpaRepository<User, Integer> {
+public interface ProjectRepo extends CrudRepository<User, Integer> {
+    User findByUsername(String username);
 }

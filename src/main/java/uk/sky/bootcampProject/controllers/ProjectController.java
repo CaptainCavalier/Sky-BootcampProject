@@ -2,7 +2,7 @@ package uk.sky.bootcampProject.controllers;
 
 import org.springframework.web.bind.annotation.*;
 import uk.sky.bootcampProject.entities.User;
-import uk.sky.bootcampProject.service.ProjectService;
+import uk.sky.bootcampProject.DbService.ProjectService;
 
 import javax.validation.Valid;
 import javax.websocket.server.PathParam;
@@ -41,8 +41,8 @@ public class ProjectController {
     }
 
     @PatchMapping("/update/{id}")
-    public User updateMember(@PathVariable int id, @PathParam("fullName") String fullName, @PathParam("userName") String userName, @PathParam("password") String password) {
-        return this.service.update(id, fullName, userName, password);
+    public User updateMember(@PathVariable int id, @PathParam("fullName") String fullName, @PathParam("username") String username, @PathParam("password") String password, @PathParam("address") String address) {
+        return this.service.update(id, fullName, username, password, address);
     }
 
     @DeleteMapping("/remove/{id}")
