@@ -32,11 +32,11 @@ public class ProjectServiceDB implements ProjectService {
     }
 
     @Override
-    public User update(int id, String fullName, String userName, String password, String address) {
+    public User update(int id, String fullName, String username, String password, String address) {
         User editUserDetails = this.getById(id);
 
         if (fullName != null) editUserDetails.setFullName(fullName);
-        if (userName != null) editUserDetails.setUserName(userName);
+        if (username != null) editUserDetails.setUsername(username);
         if (password != null) editUserDetails.setPassword(password);
         if (address != null) editUserDetails.setAddress(address);
 

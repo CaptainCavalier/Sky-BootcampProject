@@ -11,7 +11,7 @@ public interface ProjectService {
 
     User getById(int id);
 
-    User update(int id, String fullName, String userName, String password, String address);
+    User update(int id, String fullName, String username, String password, String address);
 
     User remove(int id);
 }
